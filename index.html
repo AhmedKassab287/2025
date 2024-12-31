@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Happy New Year 2025</title>
+    <meta charset="UTF-8">
+    <style>
+       body {
+            background: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding-left: 20px;
+            overflow: hidden;
+        }
+        .initial-text {
+            opacity: 1;
+            animation: fadeOutAll 0.5s 6.7s forwards;
+        }
+        .word {
+            opacity: 0;
+            font-size: 2.5rem;
+            margin: 10px;
+            animation: fadeIn 0.5s forwards;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+        .line {
+            margin: 20px 0;
+            text-align: left;
+            position: relative;
+        }
+        .line2 { margin-left: 40px; }
+        .line3 { margin-left: 80px; }
+        .line4 { margin-left: 120px; }
+        
+        .celebration-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8rem;
+            color: gold;
+            opacity: 0;
+            animation: showCelebration 0.5s 7s forwards;
+            perspective: 1000px;
+        }
+        
+        .number {
+            display: inline-block;
+            animation: glow 2s infinite;
+        }
+        
+        .four {
+            animation: fadeOut 0.5s 9s forwards;
+        }
+        
+        .five {
+            position: absolute;
+            right: 0;
+            opacity: 0;
+            animation: slideIn 0.5s 9s forwards, hitEffect 0.3s 9.5s forwards;
+        }
+        
+        .explosion {
+            position: fixed;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        .explosion-ring {
+            position: absolute;
+            border-radius: 50%;
+            animation: explode 1s ease-out forwards;
+        }
+
+        .spark {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: white;
+            opacity: 0;
+        }
+        .lightning {
+            position: fixed;
+            width: 2px;
+            height: 0;
+            background: white;
+            transform-origin: top;
+            filter: blur(1px);
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 1s infinite;
+        }
+
+        @keyframes fadeOutAll {
+            to { opacity: 0; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes showCelebration {
+            to { opacity: 1; }
+        }
+        
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px gold, 0 0 30px orange; }
+            50% { text-shadow: 0 0 40px gold, 0 0 60px orange, 0 0 80px yellow; }
+        }
+        
+        @keyframes fadeOut {
+            to { opacity: 0; }
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes hitEffect {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes explode {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+                border-width: 1px;
+            }
+        }
+
+        @keyframes spark {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(0);
+                opacity: 0;
+            }
+        }
+        @keyframes lightning {
+            0% { height: 0; opacity: 1; }
+            30% { opacity: 1; }
+            100% { height: var(--height); opacity: 0; }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.5); }
+        }
+
+        .shockwave {
+            position: fixed;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            animation: shockwave 1s ease-out forwards;
+        }
+
+        @keyframes shockwave {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 800px;
+                height: 800px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="initial-text">
+        <div class="line">
+            <span class="word" style="animation-delay: 0.2s">And</span>
+            <span class="word" style="animation-delay: 0.6s">with</span>
+            <span class="word" style="animation-delay: 0.8s">that</span>
+        </div>
+        <div class="line line2">
+            <span class="word" style="animation-delay: 1.3s">the</span>
+            <span class="word" style="animation-delay: 1.6s">2024</span>
+            <span class="word" style="animation-delay: 2s">season</span>
+        </div>
+        <div class="line line3">
+            <span class="word" style="animation-delay: 3.3s">comes</span>
+            <span class="word" style="animation-delay: 3.5s">to</span>
+            <span class="word" style="animation-delay: 3.8s">an</span>
+            <span class="word" style="animation-delay: 4.0s">end</span>
+        </div>
+        <div class="line line4">
+            <span class="word" style="animation-delay: 4.7s">Good night!</span>
+        </div>
+    </div>
+
+    <div class="celebration-container">
+        <span class="number">2</span>
+        <span class="number">0</span>
+        <span class="number">2</span>
+        <span class="number four">4</span>
+        <span class="five">5</span>
+    </div>
+    <audio autoplay src="./music/music.mp3"></audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.4.0/confetti.browser.min.js"></script>
+    <script>
+        function createStars() {
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(star);
+            }
+        }
+
+        function createLightning() {
+            const lightning = document.createElement('div');
+            lightning.className = 'lightning';
+            lightning.style.left = Math.random() * window.innerWidth + 'px';
+            lightning.style.top = '0';
+            lightning.style.setProperty('--height', Math.random() * window.innerHeight + 'px');
+            lightning.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
+            lightning.style.animation = 'lightning 0.5s ease-out forwards';
+            document.body.appendChild(lightning);
+            setTimeout(() => lightning.remove(), 500);
+        }
+
+        function createShockwave(x, y) {
+            const shockwave = document.createElement('div');
+            shockwave.className = 'shockwave';
+            shockwave.style.left = x + 'px';
+            shockwave.style.top = y + 'px';
+            document.body.appendChild(shockwave);
+            setTimeout(() => shockwave.remove(), 1000);
+        }
+
+        function createExplosion(x, y, color) {
+            const explosion = document.createElement('div');
+            explosion.className = 'explosion';
+            explosion.style.left = x + 'px';
+            explosion.style.top = y + 'px';
+
+            for (let i = 0; i < 4; i++) {
+                const ring = document.createElement('div');
+                ring.className = 'explosion-ring';
+                ring.style.border = `2px solid ${color}`;
+                ring.style.animationDelay = `${i * 0.2}s`;
+                explosion.appendChild(ring);
+            }
+
+            for (let i = 0; i < 40; i++) {
+                const spark = document.createElement('div');
+                spark.className = 'spark';
+                spark.style.background = color;
+                
+                const angle = (i / 40) * Math.PI * 2;
+                const distance = Math.random() * 300 + 100;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                
+                spark.style.setProperty('--tx', `${tx}px`);
+                spark.style.setProperty('--ty', `${ty}px`);
+                spark.style.animation = `spark 1.5s ease-out forwards ${Math.random() * 0.3}s`;
+                
+                explosion.appendChild(spark);
+            }
+
+            createShockwave(x, y);
+            document.body.appendChild(explosion);
+            setTimeout(() => explosion.remove(), 2000);
+        }
+
+        function triggerExplosions() {
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#ffffff', '#00ffff', '#ffa500'];
+            setInterval(() => {
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                createExplosion(x, y, color);
+                if (Math.random() > 0.7) createLightning();
+            }, 300);
+        }
+
+        function launchFireworks() {
+            const duration = 10;
+            const animationEnd = Date.now() + duration * 1000;
+
+            (function frame() {
+                const timeLeft = animationEnd - Date.now();
+                if (timeLeft <= 0) return;
+
+                confetti({
+                    particleCount: 300,
+                    angle: 90,
+                    spread: 120,
+                    origin: { x: Math.random(), y: 0.8 },
+                    colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'],
+                    ticks: 300
+                });
+
+                requestAnimationFrame(frame);
+            })();
+        }
+
+        createStars();
+        setTimeout(triggerExplosions, 8200);
+        setTimeout(launchFireworks, 7500);
+    </script>
+</body>
+</html>
